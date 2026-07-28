@@ -2,6 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Award, X, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import { CertificateItem } from '../types';
 
+import nptelJavaImg from '../assets/images/nptel.jpeg';
+import prayaLabsImg from '../assets/images/certify1 (2).jpeg';
+import convergenceImg from '../assets/images/nehru.jpeg';
+import niceQuizImg from '../assets/images/quiz.jpeg';
+
 export default function Certificates() {
   const [selectedCert, setSelectedCert] = useState<CertificateItem | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -11,11 +16,6 @@ export default function Certificates() {
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
-  const nptelJavaImg = '/src/assets/images/nptel.jpeg';
-  const prayaLabsImg = '/src/assets/images/certify1 (2).jpeg';
-  const convergenceImg = '/src/assets/images/nehru.jpeg';
-  const niceQuizImg = '/src/assets/images/quiz.jpeg';
 
   const certificatesData: CertificateItem[] = [
     {
@@ -161,7 +161,7 @@ export default function Certificates() {
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       referrerPolicy="no-referrer"
                     />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6, 18, 38, 0.7), transparent)' }}></div>
+                    <div className="cert-card-img-overlay"></div>
                   </div>
                 )}
                 <div className="certificate-badge-icon" style={{ top: cert.image ? '180px' : '24px' }}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Github, Linkedin, Instagram, Mail, ArrowRight, Download } from 'lucide-react';
+import finalresumePdf from '../resume/finalresume.pdf';
 
 interface HeroProps {
   avatarPath: string;
@@ -99,13 +100,13 @@ export default function Hero({ avatarPath }: HeroProps) {
                 View Projects <ArrowRight size={16} />
               </button>
               <a
-  id="hero-download-resume-btn"
-  href="src/resume/fresume.pdf"
-  download
-  className="btn btn-secondary"
->
-  <Download size={16} /> Download Resume
-</a>
+                id="hero-download-resume-btn"
+                href={finalresumePdf}
+                download="Maladhi_M_Resume.pdf"
+                className="btn btn-secondary"
+              >
+                <Download size={16} /> Download Resume
+              </a>
             </div>
 
             <div className="hero-socials">

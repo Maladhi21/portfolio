@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon, Download, Menu, X } from 'lucide-react';
-import { downloadResumePDF } from '../utils/resumeGenerator';
+import finalresumePdf from '../resume/finalresume.pdf';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -65,10 +65,6 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
     }
   };
 
-  const downloadResume = () => {
-    downloadResumePDF();
-  };
-
   return (
     <header className={`navbar-wrapper ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
@@ -106,14 +102,15 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
-            <button
+            <a
               id="nav-resume-btn"
+              href={finalresumePdf}
+              download="Maladhi_M_Resume.pdf"
               className="btn btn-primary nav-btn-resume"
               style={{ padding: '8px 20px', fontSize: '0.85rem' }}
-              onClick={downloadResume}
             >
               <Download size={14} /> Download Resume
-            </button>
+            </a>
 
             <button
               id="mobile-nav-toggle-btn"
@@ -142,16 +139,17 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             {item.label}
           </a>
         ))}
-        <button
+        <a
+          href={finalresumePdf}
+          download="Maladhi_M_Resume.pdf"
           className="btn btn-primary"
           style={{ marginTop: '20px' }}
           onClick={() => {
             setMobileMenuOpen(false);
-            downloadResume();
           }}
         >
           <Download size={16} /> Download Resume
-        </button>
+        </a>
       </div>
     </header>
   );

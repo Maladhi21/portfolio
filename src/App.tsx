@@ -9,12 +9,12 @@ import Projects from './components/Projects';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 
-// Reference assets processed by Vite asset pipeline
-const profileAvatar = '/src/assets/images/profile_avatar_1783573356399.jpg';
-const bloodBankImg = '/src/assets/images/blood_bank_project_1783573402233.jpg';
-const aiResumeImg = '/src/assets/images/ai_resume_project_1783573417638.jpg';
-const agricultureImg = '/src/assets/images/agriculture_project_1783573437126.jpg';
-const stockImg = '/src/assets/images/stock_project_1783573453385.jpg';
+// Import image assets processed by Vite build pipeline
+import profileAvatar from './assets/images/profile_avatar_1783573356399.jpg';
+import bloodBankImg from './assets/images/blood_bank_project_1783573402233.jpg';
+import aiResumeImg from './assets/images/ai_resume_project_1783573417638.jpg';
+import agricultureImg from './assets/images/agriculture_project_1783573437126.jpg';
+import stockImg from './assets/images/stock_project_1783573453385.jpg';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
